@@ -62,7 +62,7 @@ const togglePaymentModal = () => {
 }
 
 const getHomePageData = () => {
-	axios.get('http://happykids-backend.test/api/home').then((response) => {
+	axios.get('/home').then((response) => {
 		const data = response.data.data
 		recruiting.value = data.recruiting
 		recruiting_full.value = data.recruiting_full

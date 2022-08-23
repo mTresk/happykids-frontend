@@ -25,7 +25,7 @@ const mutations = {
 
 const actions = {
 	getSettings({ commit }) {
-		return axios.get('http://happykids-backend.test/api/settings').then((response) => {
+		return axios.get('/settings').then((response) => {
 			const settings = response.data
 			const phone_digits = settings.phone.replace(/[^\d]/g, '')
 			commit('setSettings', settings)

@@ -19,7 +19,7 @@ const mutations = {
 const actions = {
 	getGrades({ commit }) {
 		return axios
-			.get('http://happykids-backend.test/api/grade')
+			.get('/grade')
 			.then((grades) => {
 				commit('setGrades', grades.data.data)
 			})

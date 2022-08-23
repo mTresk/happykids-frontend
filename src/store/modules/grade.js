@@ -32,7 +32,7 @@ const mutations = {
 
 const actions = {
 	getGrade({ commit }, slug) {
-		axios.get(`http://happykids-backend.test/api/grade/${slug}`).then((response) => {
+		axios.get(`/grade/${slug}`).then((response) => {
 			commit('setGrade', response.data.data)
 			commit('setImageFull', response.data.data.image.full)
 			commit('setImageFullWebp', response.data.data.image.full_webp)
