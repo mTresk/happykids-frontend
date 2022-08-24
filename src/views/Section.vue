@@ -36,6 +36,7 @@ import Modal from '../components/Modal.vue'
 import { onMounted, ref, computed } from 'vue'
 import { Head } from '@vueuse/head'
 import { useStore } from 'vuex'
+import axios from '@/axios'
 
 const store = useStore()
 const section = ref('')

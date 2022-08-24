@@ -120,7 +120,7 @@ const modules = [Navigation, Pagination, EffectCoverflow, Autoplay]
 }
 
 .vel-modal {
-	background: rgba(0, 0, 0, 0.9);
+	background: rgba(0, 0, 0, 0.9) !important;
 }
 
 .photo__image {

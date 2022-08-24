@@ -83,7 +83,7 @@
 							</div>
 						</div>
 						<div class="form__input">
-							<input v-model="phone" autocomplete="off" type="text" name="phone" data-required data-error="Введите телефон" placeholder="Ваш телефон" class="input" />
+							<input v-maska="'+7 (###) ###-##-##'" v-model="phone" autocomplete="off" type="text" name="phone" placeholder="Ваш телефон" class="input" />
 							<div v-if="phoneError" class="form__error">
 								{{ phoneError[0] }}
 							</div>
@@ -166,7 +166,7 @@ const closeThanxModal = () => {
 const contact = () => {
 	isLoading.value = true
 	axios
-		.post('http://happykids-backend.test/api/contact', {
+		.post('/contact', {
 			name: name.value,
 			phone: phone.value,
 			age: age.value,
@@ -197,13 +197,14 @@ const contact = () => {
 const payment = () => {
 	isLoading.value = true
 	axios
-		.post('http://happykids-backend.test/api/payments/create', {
+		.post('/create', {
 			name: name.value,
 			phone: phone.value,
 			amount: amount.value,
 		})
 		.then((response) => {
 			if (response.status == 200) {
+				window.open(response.data, '_self')
 				isLoading.value = false
 				closePaymentModal()
 				name.value = ''
